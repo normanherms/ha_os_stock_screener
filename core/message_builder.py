@@ -3,6 +3,8 @@ def build_message(filtered: dict, max_length: int = 254) -> str:
         return "📭 Keine auffälligen Aktienbewegungen heute."
 
     lines = []
+    hint = "📈 Weitere Ergebnisse anzeigen..."
+
     for name, data in filtered.items():
         sign = "📉" if data["change_pct"] < 0 else "📈"
         change = f"{data['change_pct']}%"
@@ -12,13 +14,15 @@ def build_message(filtered: dict, max_length: int = 254) -> str:
 
         line = f"{sign} {name}: {change} | Kurs: {price} | Volumen: {volume_str}"
 
-        # Vor dem Hinzufügen prüfen, ob die Nachricht noch unter dem Limit bleibt
-        preview = "\n".join(lines + [line])
+        # Wenn nächste Zeile + Hinweis zu lang wäre → abbrechen mit Hinweis
+        preview = "\n".join(lines + [line, hint])
         if len(preview) > max_length:
-            # Wenn zu lang, ein „+ weitere“ hinzufügen
-            lines.append("📈 Weitere Ergebnisse anzeigen...")
+            lines.append(hint)
             break
 
         lines.append(line)
+
+    if not lines:
+        return "📭 Keine auffälligen Aktienbewegungen heute."
 
     return "\n".join(lines)
