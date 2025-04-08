@@ -1,0 +1,12 @@
+# Einheitliche Zeilenenden (vor allem für Windows vs. Linux)
+* text=auto
+
+# Shell-Skripte: immer LF (für HA / Linux-Systeme)
+*.sh text eol=lf
+
+# Markdown als Dokumentation (für GitHub Language Stats)
+*.md linguist-documentation
+
+# README & Install-Skripte bei ZIP-Export dabei, Tools nicht zwingend
+tools/* export-ignore
+*.bak export-ignore
