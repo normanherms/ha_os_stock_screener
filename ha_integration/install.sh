@@ -29,6 +29,7 @@ cp -r output "$TARGET_DIR/"
 cp -r shared "$TARGET_DIR/"
 cp run.py "$TARGET_DIR/"
 cp requirements.txt "$TARGET_DIR/"
+cp ha_integration/install.sh "$TARGET_DIR/" 2>/dev/null
 cp README.md "$TARGET_DIR/" 2>/dev/null
 cp ideas.md "$TARGET_DIR/" 2>/dev/null
 cp CHANGELOG.md "$TARGET_DIR/" 2>/dev/null
@@ -36,13 +37,7 @@ cp CHANGELOG.md "$TARGET_DIR/" 2>/dev/null
 # 5. Setze Berechtigungen
 chmod -R 755 "$TARGET_DIR"
 
-# 6. Aktienliste erzeugen (einmalig)
-echo ""
-echo "📊 Generiere Liste deutscher Aktien (DAX, MDAX, SDAX, TecDAX)..."
-python3 /config/custom_components/ha_os_stock_screener/core/tools/generate_all_stocks.py
-
-
-# 7. Abschlussmeldung
+# 6. Abschlussmeldung
 echo ""
 echo "✅ ha_os_stock_screener wurde erfolgreich installiert nach:"
 echo "   $TARGET_DIR"

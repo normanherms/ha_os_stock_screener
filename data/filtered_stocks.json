@@ -1,0 +1,38 @@
+{
+    "Commerzbank AG": {
+        "name": "Commerzbank AG",
+        "symbol": "CBK.DE",
+        "price": 21.87,
+        "change_pct": 5.55,
+        "volume": 16860717,
+        "impact": 93.58,
+        "timestamp": "2025-04-08T20:36:10.972401"
+    },
+    "Deutsche Telekom AG": {
+        "name": "Deutsche Telekom AG",
+        "symbol": "DTE.DE",
+        "price": 32.0,
+        "change_pct": 2.04,
+        "volume": 13505063,
+        "impact": 27.55,
+        "timestamp": "2025-04-08T20:36:11.487105"
+    },
+    "BASF SE": {
+        "name": "BASF SE",
+        "symbol": "BAS.DE",
+        "price": 40.89,
+        "change_pct": -2.57,
+        "volume": 4763901,
+        "impact": 12.24,
+        "timestamp": "2025-04-08T20:36:10.472973"
+    },
+    "Bayer AG": {
+        "name": "Bayer AG",
+        "symbol": "BAYN.DE",
+        "price": 20.41,
+        "change_pct": 1.62,
+        "volume": 6008416,
+        "impact": 9.73,
+        "timestamp": "2025-04-08T20:36:11.296096"
+    }
+}
