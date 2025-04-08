@@ -15,11 +15,10 @@ def build_message(filtered: dict, max_length: int = 254) -> str:
         # Vor dem Hinzufügen prüfen, ob die Nachricht noch unter dem Limit bleibt
         preview = "\n".join(lines + [line])
         if len(preview) > max_length:
+            # Wenn zu lang, ein „+ weitere“ hinzufügen
+            lines.append("📈 Weitere Ergebnisse anzeigen...")
             break
 
         lines.append(line)
-
-    if not lines:
-        return "📭 Keine auffälligen Aktienbewegungen heute."
 
     return "\n".join(lines)

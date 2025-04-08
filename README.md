@@ -56,6 +56,7 @@ git clone https://github.com/normanherms/ha_os_stock_screener.git
 cd ha_os_stock_screener
 chmod +x ha_integration/install.sh
 ./ha_integration/install.sh
+pip install -r /config/custom_components/ha_os_stock_screener/requirements.txt
 
 ```
 
@@ -67,15 +68,14 @@ chmod +x ha_integration/install.sh
 command_line:
   - sensor:
       name: "Aktien_Nachricht"
-      command: "cat /config/custom_components/ha_stock_screener/message.txt"
+      command: "cat /config/custom_components/ha_os_stock_screener_output/message.txt"
       value_template: "{{ value }}"
-      scan_interval: 7200
+      scan_interval: 1800
       unique_id: aktien_nachricht_cmdline
 
+# Shell-Befehle
 shell_command:
-  # install_yfinance: "bash /config/custom_components/ha_stock_screener/install.sh"
-  # update_stock_screener: "cd /config/custom_components/ha_stock_screener && git pull"
-  run_stock_screener: "python3 /config/custom_components/ha_stock_screener/stock_screener.py"
+  run_stock_screener: "python3 /config/custom_components/ha_os_stock_screener/run.py"
 ```
 
 ---
@@ -86,11 +86,11 @@ shell_command:
 - id: "aktien_screener_timer"
   alias: "Aktien Screener automatisch tagsüber"
   trigger:
-    - platform: time_pattern
-      minutes: "/15"
+    - trigger: time_pattern
+      minutes: /30
   condition:
     - condition: time
-      after: "07:30:00"
+      after: "09:00:00"
       before: "22:00:00"
     - condition: time
       weekday:
@@ -100,19 +100,20 @@ shell_command:
         - thu
         - fri
   action:
-    - service: shell_command.run_stock_screener
+    - action: shell_command.run_stock_screener
 
     - delay: "00:00:03" # Warte kurz, bis Sensor die Datei neu liest
 
     - condition: template
       value_template: "{{ states('sensor.aktien_nachricht') | length > 5 }}"
 
-    - service: rest_command.whatsapp_notify
+    - action: rest_command.whatsapp_notify
       data:
         phone: !secret whatsapp_phone
         message: "{{ states('sensor.aktien_nachricht') }}"
         apikey: !secret callmebot_api
   mode: single
+
 ```
 
 In deiner `secrets.yaml`:
