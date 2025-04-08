@@ -5,6 +5,7 @@ echo "📦 Starte Installation von ha_os_stock_screener in Home Assistant..."
 echo "------------------------------------------------------------"
 
 TARGET_DIR="/config/custom_components/ha_os_stock_screener"
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
 
 # 1. Sicherstellen, dass wir auf HA OS sind
 if [ ! -d "/config" ]; then
@@ -23,16 +24,17 @@ mkdir -p "$TARGET_DIR"
 
 # 4. Kopiere komplette Projektstruktur
 echo "📁 Kopiere Dateien nach $TARGET_DIR ..."
-cp -r core "$TARGET_DIR/"
-cp -r data "$TARGET_DIR/"
-cp -r output "$TARGET_DIR/"
-cp -r shared "$TARGET_DIR/"
-cp run.py "$TARGET_DIR/"
-cp requirements.txt "$TARGET_DIR/"
-cp ha_integration/install.sh "$TARGET_DIR/" 2>/dev/null
-cp README.md "$TARGET_DIR/" 2>/dev/null
-cp ideas.md "$TARGET_DIR/" 2>/dev/null
-cp CHANGELOG.md "$TARGET_DIR/" 2>/dev/null
+cp -r "$SCRIPT_DIR/core" "$TARGET_DIR/"
+cp -r "$SCRIPT_DIR/data" "$TARGET_DIR/"
+cp -r "$SCRIPT_DIR/output" "$TARGET_DIR/"
+cp -r "$SCRIPT_DIR/shared" "$TARGET_DIR/"
+cp "$SCRIPT_DIR/run.py" "$TARGET_DIR/"
+cp "$SCRIPT_DIR/requirements.txt" "$TARGET_DIR/"
+cp "$SCRIPT_DIR/LICENSE" "$TARGET_DIR/"
+cp "$SCRIPT_DIR/ha_integration/install.sh" "$TARGET_DIR/" 2>/dev/null
+cp "$SCRIPT_DIR/README.md" "$TARGET_DIR/" 2>/dev/null
+cp "$SCRIPT_DIR/CHANGELOG.md" "$TARGET_DIR/" 2>/dev/null
+cp "$SCRIPT_DIR/ideas.md" "$TARGET_DIR/" 2>/dev/null
 
 # 5. Setze Berechtigungen
 chmod -R 755 "$TARGET_DIR"
