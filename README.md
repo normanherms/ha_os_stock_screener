@@ -51,11 +51,12 @@ tools/             → Hilfs-Skripte wie Aktien-Scraper
 ### 1. Terminal-Befehle:
 
 ```bash
-cd /config
+cd /config/custom_components
 git clone https://github.com/normanherms/ha_os_stock_screener.git
-cd ha_os_stock_screener/ha_integration
-chmod +x install.sh
-./install.sh
+cd ha_os_stock_screener
+chmod +x ha_integration/install.sh
+./ha_integration/install.sh
+
 ```
 
 ---
