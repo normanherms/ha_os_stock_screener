@@ -1,0 +1,43 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.so
+
+# VS Code & IDEs
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Home Assistant spezifisch
+home-assistant.log
+home-assistant_v2.db
+*.db-shm
+*.db-wal
+
+# Betriebssystem
+.DS_Store
+Thumbs.db
+
+# Python virtualenv / Conda
+venv/
+.env/
+.envrc
+*.env
+
+# Output & Logs
+output/*.txt
+*.log
+*.zip
+*.tar.gz
+
+# Sonstiges
+*.bak
+*.swp
+*.tmp
+*.old
+
+# Projekt-Spezifisch
+data/*.csv
+data/*.json
+data/*.db
