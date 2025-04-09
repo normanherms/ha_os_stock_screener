@@ -41,3 +41,7 @@ output/*.txt
 data/*.csv
 # data/*.json
 data/*.db
+
+tools/
+shared/
+ha_integration/

@@ -6,7 +6,7 @@
         "change_pct": -7.23,
         "volume": 472775500,
         "impact": 3418.17,
-        "timestamp": "2025-04-09T14:31:18.007076"
+        "timestamp": "2025-04-09T15:26:46.300594"
     },
     "Tesla Inc.": {
         "name": "Tesla Inc.",
@@ -15,7 +15,7 @@
         "change_pct": -9.44,
         "volume": 170068600,
         "impact": 1605.45,
-        "timestamp": "2025-04-09T14:31:17.911995"
+        "timestamp": "2025-04-09T15:26:46.206220"
     },
     "Apple Inc.": {
         "name": "Apple Inc.",
@@ -24,7 +24,7 @@
         "change_pct": -7.65,
         "volume": 120363400,
         "impact": 920.78,
-        "timestamp": "2025-04-09T14:31:17.364147"
+        "timestamp": "2025-04-09T15:26:45.775079"
     },
     "Amazon.com Inc.": {
         "name": "Amazon.com Inc.",
@@ -33,7 +33,7 @@
         "change_pct": -7.87,
         "volume": 87450700,
         "impact": 688.24,
-        "timestamp": "2025-04-09T14:31:17.592993"
+        "timestamp": "2025-04-09T15:26:45.957964"
     },
     "Alphabet Inc. (Class A)": {
         "name": "Alphabet Inc. (Class A)",
@@ -42,6 +42,6 @@
         "change_pct": -4.31,
         "volume": 52083900,
         "impact": 224.48,
-        "timestamp": "2025-04-09T14:31:17.690403"
+        "timestamp": "2025-04-09T15:26:46.043859"
     }
 }
