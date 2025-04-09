@@ -8,6 +8,7 @@ WORKDIR /app
 COPY requirements.txt /app/requirements.txt
 
 # 4) Installiere alle Python-Abhängigkeiten aus requirements.txt
+COPY requirements.txt /app/requirements.txt
 RUN pip install --no-cache-dir -r /app/requirements.txt
 
 # 5) Kopiere den gesamten core-Ordner ins Image
