@@ -1,6 +1,6 @@
 {
-    "schema": "3",
-    "addons": [
-        "addon"
-    ]
-}
+    "name": "HA OS Stock Screener Add-on Repository",
+    "url": "https://github.com/normanherms/ha_os_stock_screener",
+    "maintainer": "Norman Herms <you@example.com>"
+  }
+  
