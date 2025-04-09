@@ -1,4 +1,4 @@
-📈 Commerzbank AG: 5.55% | Kurs: 21.87 € | Volumen: 16.9 Mio.
-📈 Deutsche Telekom AG: 2.04% | Kurs: 32.0 € | Volumen: 13.5 Mio.
-📉 BASF SE: -2.57% | Kurs: 40.89 € | Volumen: 4.8 Mio.
-📈 Bayer AG: 1.62% | Kurs: 20.41 € | Volumen: 6.0 Mio.
+📉 NVIDIA Corp.: -7.23% | Kurs: 96.3 € | Volumen: 472.8 Mio.
+📉 Tesla Inc.: -9.44% | Kurs: 221.86 € | Volumen: 170.1 Mio.
+📉 Apple Inc.: -7.65% | Kurs: 172.42 € | Volumen: 120.4 Mio.
+📈 Weitere Ergebnisse anzeigen...

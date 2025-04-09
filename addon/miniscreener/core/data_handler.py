@@ -1,35 +1,38 @@
 import yfinance as yf
 from datetime import datetime
 import json
-import os
+from pathlib import Path
 
-from core.config import STOCK_SOURCES
+from core.config import STOCK_SOURCES, VOLUME_MIN, MAX_RESULTS, SORT_BY
+
+# Basisverzeichnis des Add-ons bestimmen
+BASE = Path(__file__).resolve().parent.parent
+
 
 def load_tickers(limit=None):
     combined = {}
 
     for filepath in STOCK_SOURCES:
-        if not os.path.exists(filepath):
-            print(f"⚠️ Datei nicht gefunden: {filepath} – wird übersprungen.")
+        full_path = BASE / filepath
+        if not full_path.exists():
+            print(f"⚠️ Datei nicht gefunden: {full_path} – wird übersprungen.")
             continue
 
         try:
-            with open(filepath, "r", encoding="utf-8") as f:
+            with open(full_path, "r", encoding="utf-8") as f:
                 data = json.load(f)
                 if isinstance(data, dict):
                     combined.update(data)
                 else:
-                    print(f"⚠️ Datei {filepath} ist kein Dictionary – wird ignoriert.")
+                    print(f"⚠️ Datei {full_path} ist kein Dictionary – wird ignoriert.")
         except Exception as e:
-            print(f"⚠️ Fehler beim Laden von {filepath}: {e}")
+            print(f"⚠️ Fehler beim Laden von {full_path}: {e}")
 
     if limit:
         combined = dict(list(combined.items())[:limit])
 
     return combined
 
-
-from core.config import VOLUME_MIN, MAX_RESULTS, SORT_BY
 
 def fetch_and_filter(tickers: dict, threshold: float, output=True):
     entries = []
@@ -75,8 +78,11 @@ def fetch_and_filter(tickers: dict, threshold: float, output=True):
 
     # Optional speichern
     if output:
-        os.makedirs("data", exist_ok=True)
-        with open("data/filtered_stocks.json", "w", encoding="utf-8") as f:
+        output_dir = BASE / "data"
+        output_dir.mkdir(parents=True, exist_ok=True)
+
+        out_file = output_dir / "filtered_stocks.json"
+        with open(out_file, "w", encoding="utf-8") as f:
             json.dump(filtered, f, indent=4)
 
     return filtered
