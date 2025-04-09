@@ -1,15 +1,23 @@
 {
   "name": "Stock Screener Add-on",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "slug": "stock_screener",
   "description": "Ein Add-on, um den Stock Screener dauerhaft in Home Assistant OS auszuführen.",
   "startup": "services",
   "boot": "auto",
   "options": {},
   "schema": {},
-  "arch": ["armhf", "armv7", "aarch64", "amd64"],
+  "arch": [
+      "armhf",
+      "armv7",
+      "aarch64",
+      "amd64"
+  ],
   "ports": {},
-  "map": ["config:rw", "ssl"],
+  "map": [
+      "config:rw",
+      "ssl"
+  ],
   "devices": [],
   "ingress": false,
   "url": "",
