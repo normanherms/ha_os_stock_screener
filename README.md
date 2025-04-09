@@ -68,7 +68,7 @@ pip install -r /config/custom_components/ha_os_stock_screener/requirements.txt
 command_line:
   - sensor:
       name: "Aktien_Nachricht"
-      command: "cat /config/custom_components/ha_os_stock_screener_output/message.txt"
+      command: "cat /config/custom_components/ha_os_stock_screener/output/message.txt"
       value_template: "{{ value }}"
       scan_interval: 1800
       unique_id: aktien_nachricht_cmdline
