@@ -1,5 +1,3 @@
 #!/usr/bin/with-contenv bash
-# Start-Skript des Stock Screener Add-ons
-
-echo "Starte den Stock Screener..."
-python /app/run.py
+echo "Starte den Stock Screener Add-on..."
+python3 /app/core/run.py

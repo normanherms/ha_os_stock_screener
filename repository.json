@@ -1,6 +1,5 @@
 {
-    "name": "HA OS Stock Screener Add-on Repository",
-    "url": "https://github.com/normanherms/ha_os_stock_screener",
-    "maintainer": "Norman Herms <you@example.com>"
-  }
-  
+  "name": "HA OS Stock Screener Add-on Repository",
+  "url": "https://github.com/normanherms/HA_OS_STOCK_SCREENER",
+  "maintainer": "Norman Herms <mail@example.com>"
+}
