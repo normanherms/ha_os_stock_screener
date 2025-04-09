@@ -1,6 +1,6 @@
 {
   "name": "ha_os_stock_screener",
-  "version": "0.3.1-alpha",
+  "version": "0.3.2-alpha",
   "slug": "stock_screener",
   "description": "Ein Add-on, um Aktienkurse auszuwerten und Benachrichtigungen zu senden.",
   "startup": "services",

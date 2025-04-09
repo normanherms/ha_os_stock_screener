@@ -3,7 +3,7 @@ def build_message(filtered: dict, max_length: int = 254) -> str:
         return "📭 Keine auffälligen Aktienbewegungen heute."
 
     lines = []
-    hint = "📈 Weitere Ergebnisse anzeigen..."
+    hint = "📈 to the moon..."
 
     for name, data in filtered.items():
         sign = "📉" if data["change_pct"] < 0 else "📈"
