@@ -42,6 +42,7 @@ data/*.csv
 # data/*.json
 data/*.db
 
+# Nicht genutzte Ordner
 tools/
 shared/
 ha_integration/
