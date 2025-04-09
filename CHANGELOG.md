@@ -4,6 +4,51 @@ Alle relevanten Änderungen an diesem Projekt werden in diesem Dokument dokument
 
 ---
 
+## [v0.3.2-alpha] – 2025-04-09
+
+### ✨ Hinzugefügt
+- de_stocks und us_stocks erweitert
+- kleine Bugfixes
+
+---
+
+## [v0.3.1-alpha] – 2025-04-09
+
+### ✨ Hinzugefügt
+- Updates werden jetzt in Home Assistant angezeigt
+
+---
+
+## [v0.3.0-alpha] – 2025-04-09
+
+### ✨ Hinzugefügt
+- Vollständiges Home Assistant **Add-on** (Docker-basiert)
+- `run.py` mit automatisierter Ausgabe in `output/message.txt` und zusätzlicher Datei in `config/miniscreener.txt`
+- Add-on erzeugt bei Start eine Ausgabe und beendet sich kontrolliert
+- Ausgabeformat mit Emoji + kompakten Börsendaten
+- Konfiguration des Add-ons via `run.sh` integriert
+
+### ⚙️ Geändert
+- Pfad-Handling über `pathlib` zur besseren OS-Kompatibilität
+- `message.txt` wird jetzt doppelt geschrieben (für HA und Klartext)
+- Screener schreibt strukturierte JSON-Dateien in `data/`
+- `build_message()` überprüft jetzt Nachrichtenlänge (`max_length`)
+- Add-on-Struktur aufgeteilt in `miniscreener/` und `addon/`
+- Projektstruktur überarbeitet (für Docker-Build & Deployment optimiert)
+- `Dockerfile` schlanker und gezielter aufgebaut (Python 3.11-slim)
+
+### 🧰 Entwickler-Setup
+- Neues GitHub-Branch-Konzept mit `feature/*` und PR-only Merge
+- `.github/`-Struktur mit Issue- & PR-Vorlagen
+- `CONTRIBUTING.md` und `CODE_OF_CONDUCT.md` ergänzt
+- Branch Protection Rules empfohlen & dokumentiert
+
+### 🐛 Fixes
+- Zeilenumbruch-Problem bei langen Nachrichten erkannt und ToDo angelegt
+- Pfadkonflikte beim Docker-Build durch neue Build-Kontextstruktur gelöst
+
+---
+
 ## [v0.2.0] - 2025-04-08
 
 ### Hinzugefügt
